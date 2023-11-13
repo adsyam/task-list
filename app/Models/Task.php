@@ -16,5 +16,11 @@ class Task extends Model
     protected $fillable = ['title', 'description', 'long_description'];
     //fillable is more secured than guarded
     // protected $guarded = ['secret'];
+
+    public function toggleComplete()
+    {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
     
 }
